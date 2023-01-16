@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather App</title>
+    <meta charset="UTF-8" />
+    <link href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/ebc11bdc68.js"
+      crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap"
+      rel="stylesheet" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container text-center">
+      <div class="app-body">
+        <form class="row g-3" id="search-bar">
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Type a city"
+              aria-label="City"
+              aria-describedby="basic-addon2"
+              id="city-input" />
+          </div>
+          <div class="col-auto">
+            <button class="general-button" id="search-button">Search</button>
+          </div>
+        </form>
+
+        <div class="row">
+          <div class="col">
+            <div class="city-name" id="city">Sofia</div>
+          </div>
+
+          <div class="col">
+            <div class="temperature">
+              <span id="temp-value"></span> <i class="fa-solid fa-cloud"></i>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button class="general-button" id="location-button">
+              Current location
+            </button>
+          </div>
+          <div class="col">
+            <button class="general-button" id="unit-button">
+              <span id="button-text">Switch to Fahrenheit</span>
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col"><h2></h2></div>
+          <div class="col">
+            <p>
+              Precipitation: 85% <br />
+              Wind: 5 km/h
+            </p>
+          </div>
+        </div>
+
+        <hr />
+        <div class="row">
+          <div class="col">
+            <i class="fa-solid fa-cloud-rain icon-prediction"></i>
+          </div>
+          <div class="col">
+            <i class="fa-solid fa-cloud-sun icon-prediction"></i>
+          </div>
+          <div class="col">
+            <i class="fa-solid fa-cloud-sun-rain icon-prediction"></i>
+          </div>
+          <div class="col">
+            <i class="fa-solid fa-snowflake icon-prediction"></i>
+          </div>
+          <div class="col">
+            <i class="fa-solid fa-cloud-bolt icon-prediction"></i>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="prediction-days">WED</div>
+          </div>
+          <div class="col">
+            <div class="prediction-days">THU</div>
+          </div>
+          <div class="col">
+            <div class="prediction-days">FRI</div>
+          </div>
+          <div class="col">
+            <div class="prediction-days">SAT</div>
+          </div>
+          <div class="col">
+            <div class="prediction-days">SUN</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Coded by <a href="https://github.com/hanialke">Marta Tegowska</a>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>

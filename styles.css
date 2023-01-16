@@ -1,0 +1,98 @@
+h2 {
+  font-family: "Barlow", sans-serif;
+  color: rgba(0, 0, 0, 0.445);
+  font-weight: 400;
+}
+
+footer {
+  font-family: "Barlow", sans-serif;
+  color: rgba(0, 0, 0, 0.445);
+  font-weight: 400;
+  text-align: center;
+  margin-top: 15px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #adbad4;
+}
+
+p {
+  font-family: "Barlow", sans-serif;
+  color: rgba(0, 0, 0, 0.445);
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-top: 1rem;
+}
+
+hr {
+  color: rgba(0, 0, 0, 0.445);
+  margin-bottom: 20px;
+}
+
+.temperature {
+  font-family: "Barlow", sans-serif;
+  color: rgba(0, 0, 0, 0.445);
+  font-size: 2.8rem;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.city-name {
+  font-family: "Barlow", sans-serif;
+  font-size: 2.8rem;
+  color: rgba(0, 0, 0, 0.445);
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.icon {
+  color: rgba(0, 0, 0, 0.445);
+  font-size: 2rem;
+}
+
+.icon-prediction {
+  color: rgba(0, 0, 0, 0.445);
+  font-size: 25px;
+}
+
+.app-body {
+  display: block;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border: #adbad4 2px solid;
+  padding: 2rem;
+  max-width: 650px;
+  border-radius: 2rem;
+  background: rgb(208, 217, 237);
+  background: linear-gradient(
+    180deg,
+    rgba(208, 217, 237, 1) 0%,
+    rgba(238, 243, 255, 1) 45%,
+    rgba(249, 251, 255, 1) 100%
+  );
+  box-shadow: 10px 6px 13px 2px rgba(0, 0, 0, 0.445);
+  -webkit-box-shadow: 10px 6px 13px 2px rgba(0, 0, 0, 0.445);
+  -moz-box-shadow: 10px 6px 13px 2px rgba(0, 0, 0, 0.445);
+}
+.general-button {
+  background-color: #adbad4;
+  padding: 0.375rem 0.75rem;
+  border: #adbad4 1px solid;
+  font-size: 1rem;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  font-family: "Roboto", sans-serif;
+  transition: all ease-in-out 300ms;
+}
+
+.general-button:hover {
+  background-color: #d0d9ed91;
+  color: rgba(0, 0, 0, 0.445);
+}
+
+.prediction-days {
+  font-family: "Barlow", sans-serif;
+  color: rgba(0, 0, 0, 0.445);
+  font-size: 1.3rem;
+}
