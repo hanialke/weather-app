@@ -26,6 +26,13 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let tempValue = document.querySelector("#temp-value");
   tempValue.innerHTML = `${temperature}°C`;
+  let descriptionElement = document.querySelector("#weather-description");
+  descriptionElement.innerHTML = response.data.weather[0].main;
+  let windElement = document.querySelector("#wind-speed");
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  let humidityElement = document.querySelector("humidity");
+  humidityElement.innerHTML = response.main.humidity;
+  console.log(response.data);
 }
 
 let apiKey = "8ad14f7a62f146b2ab9eaec8cacef335";
@@ -84,3 +91,5 @@ function changeUnit() {
 
 let unitButton = document.querySelector("#unit-button");
 unitButton.addEventListener("click", changeUnit);
+
+// Weather desciprion
