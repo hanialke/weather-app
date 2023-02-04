@@ -29,10 +29,9 @@ function showTemperature(response) {
   let descriptionElement = document.querySelector("#weather-description");
   descriptionElement.innerHTML = response.data.weather[0].main;
   let windElement = document.querySelector("#wind-speed");
-  windElement.innerHTML = Math.round(response.data.wind.speed);
-  let humidityElement = document.querySelector("humidity");
-  humidityElement.innerHTML = response.main.humidity;
-  console.log(response.data);
+  windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = response.data.main.humidity;
 }
 
 let apiKey = "8ad14f7a62f146b2ab9eaec8cacef335";
