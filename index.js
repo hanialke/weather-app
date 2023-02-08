@@ -27,11 +27,12 @@ function showTemperature(response) {
   let tempValue = document.querySelector("#temp-value");
   tempValue.innerHTML = `${temperature}°C`;
   let descriptionElement = document.querySelector("#weather-description");
-  descriptionElement.innerHTML = response.data.weather[0].main;
+  descriptionElement.innerHTML = response.data.weather[0].description;
   let windElement = document.querySelector("#wind-speed");
   windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = response.data.main.humidity;
+  console.log(response);
 }
 
 let apiKey = "8ad14f7a62f146b2ab9eaec8cacef335";
