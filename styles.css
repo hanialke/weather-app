@@ -46,9 +46,10 @@ hr {
   margin-top: 10px;
 }
 
-.icon {
-  color: rgba(0, 0, 0, 0.445);
-  font-size: 2rem;
+#weather-icon {
+  position: relative;
+  top: -15px;
+  margin-bottom: -25px;
 }
 
 .icon-prediction {

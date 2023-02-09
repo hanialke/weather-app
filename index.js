@@ -23,21 +23,48 @@ h2.innerHTML = `${day}, ${hour}:${minute}`;
 // Weather Default City
 
 function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = Math.round(response.data.main.temp);
   let tempValue = document.querySelector("#temp-value");
-  tempValue.innerHTML = `${temperature}°C`;
   let descriptionElement = document.querySelector("#weather-description");
-  descriptionElement.innerHTML = response.data.weather[0].description;
   let windElement = document.querySelector("#wind-speed");
-  windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
   let humidityElement = document.querySelector("#humidity");
-  humidityElement.innerHTML = response.data.main.humidity;
-  console.log(response);
-}
+  let weatherIcon = document.querySelector("#weather-icon");
 
+  tempValue.innerHTML = `${celsiusTemperature}°C`;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
+  humidityElement.innerHTML = response.data.main.humidity;
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+}
 let apiKey = "8ad14f7a62f146b2ab9eaec8cacef335";
 let apiLink = `https://api.openweathermap.org/data/2.5/weather?q=Sofia&units=metric`;
 axios.get(`${apiLink}&appid=${apiKey}`).then(showTemperature);
+
+// Unit change feature WIP
+
+function changeUnit() {
+  let buttonText = document.querySelector("#button-text");
+  if (buttonText.innerHTML === "Switch to Fahrenheit") {
+    buttonText.innerHTML = "Switch to Celsius";
+  } else {
+    buttonText.innerHTML = "Switch to Fahrenheit";
+  }
+  let fahrenheitTemprature = Math.round(celsiusTemperature * 1.8 + 32) + "°F";
+  let tempValue = document.querySelector("#temp-value");
+  if (tempValue.innerHTML === fahrenheitTemprature) {
+    tempValue.innerHTML = `${celsiusTemperature}°C`;
+  } else {
+    tempValue.innerHTML = fahrenheitTemprature;
+  }
+}
+
+let unitButton = document.querySelector("#unit-button");
+unitButton.addEventListener("click", changeUnit);
+
+let celsiusTemperature = null;
 
 // Geolocation
 
@@ -77,19 +104,3 @@ function showCurrentLocation() {
 
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", showCurrentLocation);
-
-// Unit change feature WIP
-
-function changeUnit() {
-  let buttonText = document.querySelector("#button-text");
-  if (buttonText.innerHTML === "Switch to Fahrenheit") {
-    buttonText.innerHTML = "Switch to Celsius";
-  } else {
-    buttonText.innerHTML = "Switch to Fahrenheit";
-  }
-}
-
-let unitButton = document.querySelector("#unit-button");
-unitButton.addEventListener("click", changeUnit);
-
-// Weather desciprion
