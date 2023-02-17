@@ -1,9 +1,7 @@
 // Current Time
 
 let currentTime = new Date();
-
 let h2 = document.querySelector("h2");
-
 let hour = currentTime.getHours();
 let minute = String(currentTime.getMinutes()).padStart(2, 0);
 let weekDays = [
@@ -21,6 +19,8 @@ let day = weekDays[currentTime.getDay()];
 h2.innerHTML = `${day}, ${hour}:${minute}`;
 
 // Weather Default City
+
+let celsiusTemperature = null;
 
 function showTemperature(response) {
   celsiusTemperature = Math.round(response.data.main.temp);
@@ -43,7 +43,7 @@ let apiKey = "8ad14f7a62f146b2ab9eaec8cacef335";
 let apiLink = `https://api.openweathermap.org/data/2.5/weather?q=Sofia&units=metric`;
 axios.get(`${apiLink}&appid=${apiKey}`).then(showTemperature);
 
-// Unit change feature WIP
+// Unit change feature
 
 function changeUnit() {
   let buttonText = document.querySelector("#button-text");
@@ -63,8 +63,6 @@ function changeUnit() {
 
 let unitButton = document.querySelector("#unit-button");
 unitButton.addEventListener("click", changeUnit);
-
-let celsiusTemperature = null;
 
 // Geolocation
 
@@ -104,3 +102,25 @@ function showCurrentLocation() {
 
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", showCurrentLocation);
+
+//Forecast
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-prediction");
+  let forecastHTML = `<div class="row">`;
+  let days = ["THU", "FRI", "SAT", "SUN", "MON"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col">
+              <img src="http://openweathermap.org/img/wn/02n@2x.png" class="forecast-icon">
+      
+              <div class="prediction-days">${day}</div>
+            </div>`;
+  });
+
+  forecastElement.innerHTML = forecastHTML;
+  forecastHTML = `</div>`;
+}
+
+displayForecast();

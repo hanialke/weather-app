@@ -97,3 +97,7 @@ hr {
   color: rgba(0, 0, 0, 0.445);
   font-size: 1.3rem;
 }
+
+.forecast-icon {
+  width: 3em;
+}
