@@ -38,8 +38,10 @@ function showTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  getForecast(response.data.coord);
 }
-let apiKey = "8ad14f7a62f146b2ab9eaec8cacef335";
+let apiKey = "cb286bad3607984b41ed10c8de5cf00e";
 let apiLink = `https://api.openweathermap.org/data/2.5/weather?q=Sofia&units=metric`;
 axios.get(`${apiLink}&appid=${apiKey}`).then(showTemperature);
 
@@ -102,25 +104,3 @@ function showCurrentLocation() {
 
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", showCurrentLocation);
-
-//Forecast
-
-function displayForecast() {
-  let forecastElement = document.querySelector("#weather-prediction");
-  let forecastHTML = `<div class="row">`;
-  let days = ["THU", "FRI", "SAT", "SUN", "MON"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col">
-              <img src="http://openweathermap.org/img/wn/02n@2x.png" class="forecast-icon">
-      
-              <div class="prediction-days">${day}</div>
-            </div>`;
-  });
-
-  forecastElement.innerHTML = forecastHTML;
-  forecastHTML = `</div>`;
-}
-
-displayForecast();
